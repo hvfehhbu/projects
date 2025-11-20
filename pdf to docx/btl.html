@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phân Tích Dữ Liệu Lối Sống Sinh Viên</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1, h2, h3 {
+            color: #0056b3;
+        }
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+        h2 {
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #0056b3;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        pre {
+            background: #2d2d2d;
+            color: #ccc;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+        }
+        .caption {
+            font-style: italic;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Báo cáo Phân tích Dữ liệu về Lối sống và Kết quả học tập của Sinh viên</h1>
+
+        <h2>1. Giới thiệu và Mô tả Dữ liệu</h2>
+        <h3>Nguồn Dữ liệu, Bối cảnh và Mục tiêu Phân tích</h3>
+        <p>
+            <strong>Nguồn dữ liệu:</strong> Dữ liệu được cung cấp là tệp <code>student_lifestyle_dataset.csv</code>, chứa thông tin về các hoạt động hàng ngày, mức độ căng thẳng và kết quả học tập của 2000 sinh viên. Đây là một tập dữ liệu giả định, được tạo ra để phục vụ mục đích học tập và phân tích.
+        </p>
+        <p>
+            <strong>Bối cảnh:</strong> Lối sống của sinh viên, bao gồm thời gian học, ngủ, tham gia hoạt động ngoại khóa, và rèn luyện thể chất, có thể ảnh hưởng đáng kể đến sức khỏe tinh thần (mức độ căng thẳng) và thành tích học tập (điểm số). Việc hiểu rõ các mối quan hệ này giúp đưa ra những lời khuyên hữu ích cho sinh viên để cân bằng cuộc sống và học tập.
+        </p>
+        <p>
+            <strong>Mục tiêu Phân tích:</strong>
+        </p>
+        <ul>
+            <li>Khám phá sự phân bổ của các biến số chính như giờ học, giờ ngủ, và điểm số.</li>
+            <li>Phân tích mối quan hệ giữa các yếu tố lối sống (giờ học, hoạt động thể chất,...) và kết quả học tập (điểm số).</li>
+            <li>Xác định các yếu tố có thể liên quan đến mức độ căng thẳng (Stress Level) của sinh viên.</li>
+            <li>So sánh lối sống và kết quả giữa các nhóm sinh viên khác nhau (ví dụ: theo giới tính).</li>
+        </ul>
+
+        <h2>2. Thống kê Mô tả các biến</h2>
+        <p>Dưới đây là bảng tóm tắt thống kê cho các biến số và biến phân loại trong tập dữ liệu.</p>
+        
+        <h3>Các biến số (Numerical)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Chỉ số</th>
+                    <th>Study_Hours_Per_Day</th>
+                    <th>Extracurricular_Hours_Per_Day</th>
+                    <th>Sleep_Hours_Per_Day</th>
+                    <th>Social_Hours_Per_Day</th>
+                    <th>Physical_Activity_Hours_Per_Day</th>
+                    <th>Grades</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Count</strong></td>
+                    <td>2000</td>
+                    <td>2000</td>
+                    <td>2000</td>
+                    <td>2000</td>
+                    <td>2000</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td><strong>Mean</strong></td>
+                    <td>7.48335</td>
+                    <td>2.0431</td>
+                    <td>7.5038</td>
+                    <td>2.9955</td>
+                    <td>4.51355</td>
+                    <td>7.71123</td>
+                </tr>
+                <tr>
+                    <td><strong>Std Dev</strong></td>
+<td>1.42138</td>
+<td>1.13312</td>
+<td>1.42138</td>
+<td>1.72218</td>
+<td>2.59494</td>
+<td>0.8 Grades</td>
+                </tr>
+                <tr>
+                    <td><strong>Min</strong></td>
+                    <td>5.0</td>
+                    <td>0.0</td>
+                    <td>5.0</td>
+                    <td>0.0</td>
+                    <td>0.0</td>
+                    <td>5.6</td>
+                </tr>
+                <tr>
+                    <td><strong>25%</strong></td>
+                    <td>6.2</td>
+                    <td>1.1</td>
+                    <td>6.3</td>
+                    <td>1.5</td>
+                    <td>2.3</td>
+                    <td>7.08</td>
+                </tr>
+                <tr>
+                    <td><strong>50% (Median)</strong></td>
+                    <td>7.3</td>
+                    <td>2.0</td>
+                    <td>7.5</td>
+                    <td>3.0</td>
+                    <td>4.5</td>
+                    <td>7.7</td>
+                </tr>
+                <tr>
+                    <td><strong>75%</strong></td>
+                    <td>8.7</td>
+                    <td>3.0</td>
+                    <td>8.7</td>
+                    <td>4.5</td>
+                    <td>6.7</td>
+                    <td>8.35</td>
+                </tr>
+                <tr>
+                    <td><strong>Max</strong></td>
+                    <td>10.0</td>
+                    <td>4.0</td>
+                    <td>10.0</td>
+                    <td>6.0</td>
+                    <td>13.0</td>
+                    <td>10.0</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3>Các biến phân loại (Categorical)</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Biến</th>
+                    <th>Số lượng giá trị duy nhất</th>
+                    <th>Giá trị phổ biến nhất (Top)</th>
+                    <th>Tần suất (Frequency)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Stress_Level</strong></td>
+                    <td>3</td>
+                    <td>High</td>
+                    <td>1000</td>
+                </tr>
+                <tr>
+                    <td><strong>Gender</strong></td>
+                    <td>2</td>
+                    <td>Male</td>
+                    <td>1000</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>
+            <strong>Nhận xét nhanh:</strong>
+            <ul>
+                <li>Dữ liệu có vẻ cân bằng về Giới tính (1000 Nam, 1000 Nữ) và Mức độ căng thẳng (1000 'High', 500 'Moderate', 500 'Low').</li>
+                <li>Thời gian học trung bình mỗi ngày là khoảng 7.5 giờ.</li>
+                <li>Điểm số trung bình của sinh viên là 7.71.</li>
+                <li>Có một giá trị ngoại lệ đáng chú ý ở cột <code>Physical_Activity_Hours_Per_Day</code> với giá trị tối đa là 13 giờ, cao hơn đáng kể so với mức trung bình.</li>
+            </ul>
+        </p>
+
+        <h2>3. Trực quan hóa Dữ liệu</h2>
+        <h3>Mối quan hệ giữa Giờ học và Điểm số (Scatter Plot)</h3>
+        <p>
+            Để khám phá mục tiêu phân tích, chúng ta sẽ xem xét mối quan hệ giữa thời gian học mỗi ngày và điểm số của sinh viên. Biểu đồ phân tán (scatter plot) là một lựa chọn tuyệt vời để trực quan hóa mối quan hệ giữa hai biến số. Chúng ta cũng có thể thêm màu sắc để phân biệt theo Mức độ căng thẳng (Stress Level) để có cái nhìn sâu sắc hơn.
+        </p>
+        <div class="image-container">
+            <img src="https://i.imgur.com/22222.png" alt="Biểu đồ phân tán giữa Giờ học và Điểm số">
+            <p class="caption">Biểu đồ phân tán thể hiện mối quan hệ giữa Giờ học mỗi ngày và Điểm số, phân màu theo Mức độ căng thẳng.</p>
+        </div>
+        <p>
+            <strong>Phân tích biểu đồ:</strong>
+            <ul>
+                <li><strong>Xu hướng chung:</strong> Có một xu hướng dương rõ rệt. Những sinh viên dành nhiều thời gian học hơn (trục hoành) có xu hướng đạt điểm số cao hơn (trục tung).</li>
+                <li><strong>Phân bố theo Mức độ căng thẳng:</strong>
+                    <ul>
+                        <li>Các điểm màu xanh lam (Stress Level: Low) chủ yếu tập trung ở khu vực có giờ học thấp (dưới 6.5 giờ).</li>
+                        <li>Các điểm màu cam (Stress Level: Moderate) nằm ở khoảng giữa.</li>
+                        <li>Các điểm màu xanh lá (Stress Level: High) chiếm phần lớn ở khu vực có giờ học cao (trên 7 giờ). Điều này cho thấy một mối liên hệ mạnh mẽ: học nhiều hơn có thể đi kèm với mức độ căng thẳng cao hơn, nhưng cũng dẫn đến điểm số tốt hơn.</li>
+                    </ul>
+                </li>
+            </ul>
+        </p>
+
+        <h3>Code Python để tạo Biểu đồ</h3>
+        <p>Dưới đây là đoạn mã Python sử dụng thư viện <code>pandas</code>, <code>matplotlib</code>, và <code>seaborn</code> để tạo ra biểu đồ phân tán ở trên. Bạn cần có tệp <code>student_lifestyle_dataset.csv</code> trong cùng thư mục để chạy mã này.</p>
+        <pre><code>
+# Import các thư viện cần thiết
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Tải dữ liệu từ tệp CSV
+file_path = 'student_lifestyle_dataset.csv'
+df = pd.read_csv(file_path)
+
+# Thiết lập phong cách cho biểu đồ
+sns.set_style("whitegrid")
+plt.figure(figsize=(12, 7))
+
+# Tạo biểu đồ phân tán (scatter plot)
+# x: trục hoành là 'Study_Hours_Per_Day'
+# y: trục tung là 'Grades'
+# hue: phân màu các điểm dữ liệu theo 'Stress_Level'
+# palette: chọn bảng màu
+scatter_plot = sns.scatterplot(
+    data=df,
+    x='Study_Hours_Per_Day',
+    y='Grades',
+    hue='Stress_Level',
+    palette='viridis',
+    alpha=0.8 # Độ trong suốt của các điểm
+)
+
+# Thêm tiêu đề và nhãn cho các trục
+plt.title('Mối quan hệ giữa Giờ học hàng ngày và Điểm số', fontsize=16)
+plt.xlabel('Số giờ học mỗi ngày', fontsize=12)
+plt.ylabel('Điểm số', fontsize=12)
+
+# Hiển thị chú thích (legend)
+plt.legend(title='Mức độ căng thẳng')
+
+# Hiển thị biểu đồ
+plt.show()
+        </code></pre>
+    </div>
+</body>
+</html>

@@ -1,0 +1,628 @@
+--- Extracting from c:\Users\Administrator\Documents\Projects\bcnc3.2\HW4-Ch03d.pdf ---
+--- Page 1 ---
+Hướng dẫn chung về làm bài tập nhóm (HW04)  
+(Yêu cầu/Đề bài được công bố trên trang MH - BKeL ➔ giải thích thảo luận trên Forum MH.) 
+Sv tự kết nhóm bài tập khoảng 3-5 người để làm các bài tập bắt buộc theo từng chương (khg thể làm một 
+mình !)...  Nhóm SV tự tổ chức phối hợp làm và nộp bài TRÊN BKEL theo đúng thời hạn đã công bố.  
++ Sau mỗi HW các nhóm có thể tổ chức lại mới, thêm/bớt thành viên tuỳ ý … 
+Mục tiêu : SV biết phối hợp làm việc theo nhóm (trao đổi thảo luận offline hoặc online !) phải đảm bảo mỗi 
+thành viên trong nhóm đều có tham gia trực tiếp làm bài tập (giải bài) … và để sau khi nộp tất cả các thành 
+viên đều phải nắm được cách giải tất cả các bài tập bắt buộc này (các dạng BT cơ bản của mỗi chương). 
+➔ Nhóm SV lưu ý kiểm tra thống nhất nội dung (đảm bảo giải đúng !) đồng thời chú ý để bài nộp được 
+trình bày sáng sủa dễ đọc – hình thức ở mức tốt nhất có thể ! 
+---------------- ++ tên nhóm do SV tự chọn !! 
+• Mỗi SV cần (chọn) làm/trình bày hoàn chỉnh ít nhất 02 bài nhỏ – nhóm tự phân công để mỗi bài có ít 
+nhất 01 SV nhận làm (tốt nhất là có 02 bài làm).   
+• Bài làm viết tay - mỗi bài (bài nhỏ) nên trình bày độc lập trên giấy 1 mặt + trên đầu trang phải ghi rõ cá 
+nhân đã thực hiện bài giải (SV ký tên ghi mã số + họ tên trên đầu trang)  
++ SV chú ý ghi bài  làm bằng bút nét đậm – mực màu đậm … kể cả khi vẽ hình / vẽ sơ đồ mạch.     
+• Nhóm SV phải tập trung/chia sẻ  tất cả các bài làm (từ các cá thể) – tự phân công kiểm tra, góp ý để 
+chọn ra bài làm tốt/đúng cho mỗi bài (để nhóm tập hợp làm file báo cáo – HWx). 
+Mỗi SV phụ trách đọc lại kiểm tra ít nhất 01 bài hoàn chỉnh (không phải các bài do mình đã làm). Sau khi 
+chọn được bài làm đúng/trình bày tốt nhất thì ghi nhận xét, ký xác nhận và ghi rõ họ tên ở cuối bài.  
+(để xử lý nhanh - SV có thể dùng ảnh họ tên và chữ ký ghép vào cuối ảnh bài làm của bạn !)  
+Thực tế thì SV « kiểm tra » có thể tiến hành sửa chữa hiệu đính (thêm vào) bài làm đã có - kể cả yêu cầu 
+bạn làm lại khi phát hiện sai sót lớn/cơ bản hay đơn giản là thiếu một phần so với yêu cầu đề bài. 
+• Nhóm phân công SV tạo ra 01 file bài làm « của nhóm » từ hình chụp/scan phần bài làm của các thành 
+viên + bổ sung trang bìa có DS nhóm/phân công trong nhóm và các ghi chú khác/đánh giá chung.  
++ Bổ sung đề bài+ ghi chú về các SV thực hiện nếu bản gốc bài làm còn thiếu  
++ Chú ý xử lý ảnh chụp/file để có một bài làm rõ ràng - dễ xem trong đó cũng phải xử lý để tránh những 
+chênh lệch thái quá (về hình thức) giữa các phần bài làm của các cá nhân khác nhau  trong nhóm. 
+Bản cuối cùng (.PDF) phải gửi cho tất cả các thành viên để cùng xem/kiểm tra lại lần cuối (lưu tài liệu). 
++ Mỗi nhóm – chỉ cần 01 SV đại diện nộp bài là 01 file theo link trên BKeL (yêu cầu là.pdf - Max 10MB) 
+++ Tên file nộp phải bắt đầu bởi "HW04_" sau đó là tên nhóm hay chuỗi ký tự nhận diện/đại diện ...  
+(tên file là để chuyển giao ra ngoài+lưu trong nhóm SV và cũng để SV dễ nhận ra/phân biệt khi xem lại) 
+ 
+Ghi chú: GV không đưa ra mẫu báo cáo «Bài tập HWx» mà để nhóm SV tự trình bày bài làm theo thông lệ (+ có 
+các phần bắt buộc có ghi ở trên …). Hãy hiểu rằng trình bày rõ ràng – dễ đọc là một kỹ năng rất quan trọng khi 
+làm văn bản/báo cáo. Nhìn chung văn bản nên sử dụng thống nhất cùng một chuẩn – từ đầu tới cuối … 
+ 
+ĐỀ BÀI HW4_Ch03d có 09 bài tập …  
+ 
+ 
+
+--- Page 2 ---
+Ch03-Bài 21V: Mạch hình bên ở cộng hưởng áp toàn đoạn mạch (Uab và I cùng pha).  
+(Vẽ mạch phức) - chọn góc pha của dòng phức I bằng 0 và cho biết các trị hiệu dụng  
+Uab= 80V; Udb= 40V đồng thời các trị hiệu dụng IC = IR1. 
+Hãy đưa ra giản đồ vector 03 dòng – từ đó dựng 01 giản 
+đồ vector tổng (gồm tất cả các dòng áp có trong mạch)  
+➔ dựa vào giản đồ này tính ra các trị phức (modul & 
+góc): của 02 dòng điện và của 𝐔̇ ac; 𝐔̇ ad; 𝐔̇ cd; 𝐔̇ cb . 
+ 
+Ch03-Bài 22R: Cho mạch hình bên  
+a) Tìm 02  tần số cộng hưởng của mạch lần lượt là 01 và 02.  
+    (Xem lại bài làm lần trước) 
+b) Cho giá trị phức hiệu dụng của điện áp vào u(t) luôn là 72 V 
+(dù tần số thay đổi).  
+Hãy phức hoá - giải mạch phức lần lượt với =01 và =02. ➔ Tương ứng xác định trị 
+phức và biểu thức tức thời của các dòng điện i,i1,i2 trong 02 mạch cộng hưởng (chú ý vận 
+dụng tốt các đặc tính của mạch khi cộng hưởng).  
+ 
+ 
+Ch03-Bài 23X: Cho mạch có chứa biến áp lý tưởng (BALT) hình bên với E=132 V.  
+a. Mạch có 02 nút và 03 vòng ML vậy hãy chọn ra bộ 05 các biến 
+nhánh thích hợp (ghi lên sơ đồ) ➔ viết và rút gọn thành 05 pt 
+theo 2 định luật Kirchhoff (đủ giải tìm 05 biến kể trên) ? 
+a. Chọn các biến thế nút (điện áp) → Viết các phương trình theo 
+phương pháp điện thế nút kết hợp với phương trình đặc trưng 
+của BALT (đủ giải theo các biến đã chọn) ? 
+ 
+b. Giải mạch từ cả hai hệ pt trên tìm dòng điện trên 04 điện trở ?  
+So sánh 02 phương pháp !! 
+Mục tiêu: mạch đặc biệt có BALT – VIẾT CÁC PT TƯƠNG QUAN CỦA PHẦN TỬ ĐẶC BIỆT.  
++ Giải mạch đặc biệt bằng các phương pháp đã học … CÁC LỰA CHỌN ! 
+ 
+ 
+Ch03-Bài 24M: Mạch có hỗ cảm – đã phức hóa. 
+  
+a) Chọn vẽ 03 vòng ML theo 03 dòng cho trên hình - giải 
+mạch phức bằng PP dòng mắt lưới (tính 03 dòng ML phức).   
+  
+b) Khử hỗ cảm – vẽ lại sơ đồ ghi rõ các nút, giải mạch 
+bằng PP thế nút (hệ pt dòng ML hoàn toàn giống mục a !) 
+  
+c) Kiểm chứng – tính các áp phức trên hai cuộn cảm (gợi ý 
+U và …) từ các dòng ML (câu a). So sánh kết quả với trị thế nút 
+câu c – Nhận xét !  
+Mục tiêu: mạch có hỗ cảm - giải trực tiếp bằng một phương pháp lấy ẩn số là dòng điện và ứng dụng khử hỗ cảm … 
+ 
+ 
+ 
+1:2
+24 
+6 
+12 
+8 
+E
+20 mH
++
+-
+1K
+2 F
+6F
+u(t)
+i1
+i2
+i
+*
+*
+60+60j
+j40
+j20
+j20
+20
+20
+-j40
+j60
+I1
+I2
+I3
+.
+.
+.
++
+U
+-
+.
+
+--- Page 3 ---
+Mục tiêu của 02 bài tiếp sau: Tìm sơ đồ Thévénin (02 dạng bài) cùng ứng dụng xác định tải hòa hợp (Ptmax)  
+  
+Xem trên trang MH có các mẫu bài kiểm tra 15’ về cùng đề mục này.  
+Ch03-Bài 25J: Cho mạch phức với J=3+j [A]; Z1= 10+10j; Z2= 10-10j. 
+a. Tìm mạch phức tương đương Thévénin giữa hai cực a-b.  
+b. Xác định giá trị của tải Zt mắc vào giữa a-b sao cho công suất 
+Pt trên tải này là cực đại. Tính công suất Ptmax này. 
+ 
+Ch03-Bài 26G: Mạch xác lập điều hòa với e(t)= 60 cos(2000t-/4) [V], J(t)= 10 sin(2000t) [mA] 
+  
+R=3000 ; L=1 H ; C=0,5F. Phức hóa mạch, tìm sơ đồ 
+Thévénin phức cho hai cực a-b hình bên bằng 02 cách (mục a,b) 
+  
+a) Viết pt thế nút Uab=Uv (coi IV [A] như 01 nguồn dòng)  
+ 
+ 
+Từ đó xác định các thông số và vẽ sơ đồ Thévénin. 
+  
+b) Tìm 02 giá trị trong số Uhm, Inm, Ztđ (tính trị còn lại từ  
+  
+ 
+Uhm= Inm * Ztđ) → vẽ sơ đồ Thévénin và so sánh  
+  
+ 
+với kết quả mục a) – Nhận xét. 
+  
+c) Sử dụng sơ đồ Thévénin trên  
++ Mắc điện trở 800 giữa a-b. Tính công suất P trên phần tử này.  
++ Xác định tải Zt mắc giữa a-b để công suất trên tải này đạt cực đại – Tính Ptmax này. So sánh.  
+Lưu ý: Mạch khá đơn giản – không có nguồn phụ thuộc nên có thể biến đổi tương đương đưa về sơ đồ Thévénin  
+  
+(SV có thể tự làm để so sánh với 02 PP trên) 
+ 
+Mục tiêu 02 bài tiếp sau: Giải mạch xếp chồng theo tần số (02 dạng bài)  
+  
+Xem trên trang MH có các mẫu bài kiểm tra 15’ về cùng đề mục này (bao gồm cả chuỗi Fourier). 
+Ch03-Bài 27R: Cho mạch hình bên với e(t)=30cos(4t+30o)  
+và Eo=16V.  Ứng dụng PP xếp chồng theo tần số hãy tìm biểu thức dòng 
+điện i(t) và điện áp u(t).  
+Lưu ý: Với nguồn DC (xác lập) thì  UL=𝑳
+𝒅𝑰
+𝒅𝒕=0; IC=𝑪
+𝒅𝑼
+𝒅𝒕=0 
+Ch03-Bài 28S: Cho mạch hình bên  - Ứng dụng PP xếp chồng 
+theo tần số lần lượt giải mạch tìm biểu thức của u(t). 
+  
+Cho E =20 V và 
+  
+e(t) = 10 + 60sin(10t+45o) + 20√𝟐 𝐜𝐨𝐬(𝟐𝟎𝒕) [V]
+ 
+ 
+Mục tiêu bài tiếp sau: Giải mạch ba pha đối xứng thông dụng (xem thêm 02 dạng bài trong phần giảm tải) 
+  
+HD: trong hệ thống 3 pha có thể chọn 1 đại lượng tham chiếu với góc pha 0 … Vd chọn Ufa = 220/0 
+Ch03-Bài 29K: Mạch ba pha đối xứng hình bên mắc vào hệ nguồn lưới f=50Hz có trị áp dây 
+380V. Cho Zd=3+3j; Z1=-20j và Z2=45+60j.  
+  
+a) Biến đổi tương đương và đưa về sơ đồ 01 dây pha để giải 
+mạch – Từ đó xác định các dòng điện phức Id, Id1, Id2 tương ứng 
+(kết quả gồm module và góc - chọn áp pha A có góc pha 0).  
+  
+b) Viết biểu thức tính dòng phức It2 từ đó viết biểu thức 
+theo thời gian it2(t). 
+------ Hết HW4 --------- 
+ Z1
+Z2
+J
++
+-
+U
+0,1U
+a
+b
+.
+.
+.
+C
+R
+L
+e(t)
+a
+b
+J(
+J(t)
+Zd
+Zd
+Zd
+Z1
+Z1
+Z1
+Z2
+Z2
+Z2
+C
+B
+A
+Id2
+Id
+Id1
+It2
+
+--- Extracting from c:\Users\Administrator\Documents\Projects\bcnc3.2\Gtm_03g_Thev.pdf ---
+--- Page 1 ---
+ 
+CÁC ĐỊNH LÝ MẠCH  
++ Công cụ bổ trợ để Giải mạch 
++ Giải mạch với hệ quả đặc thù  
+
+--- Page 2 ---
+Ts. Nguyễn Thanh Nam,  “Giải Tích Mạch” 
+05/04/2025 
+Tp.HCM
+BK
+ MẠNG TUYẾN TÍNH  
+ 
+ĐỊNH LÝ THÉVÉNIN-NORTON 
+Định lý Mạch – Bổ sung PP phân tích  
+
+--- Page 3 ---
+Ts. Nguyễn Thanh Nam,  “Giải Tích Mạch” 
+05/04/2025 
+Tp.HCM
+BK
+Khái niệm: Hai cực tuyến tính 
+ Hai cực tuyến tính  Mạng một cửa 
+– Phần của mạch (gồm các phần tử tuyến tính 
+& và các kết nối) liên hệ với  
+phần còn lại bởi 2 dây nối và  
+duy nhất 02 trạng thái (u,i) 
+– Liên kết hoàn toàn chi phối  
+bởi cặp biến trạng thái (u,i)  
+và không có liên kết gián tiếp nào khác 
+u 
+Mạch 
+Tuyến  
+tính 
+Phần  
+mạch 
+còn lại 
+i 
+
+--- Page 4 ---
+Ts. Nguyễn Thanh Nam,  “Giải Tích Mạch” 
+05/04/2025 
+Tp.HCM
+BK
+Khái niệm: Cực/Cửa của Mạng  
+Mạng [Hộp đen] … Nhiều cực – Nhiều cửa ? 
+– Hai kết nối (2 phần mạch) có cùng dòng điện (ngược 
+chiều) tạo thành 1 cửa (vào/ra)  
+ Cửa định nghĩa bởi 1 cặp (uk,ik) 
+– Mỗi kết nối 1 cực – định tính bởi cặp (Vk,ik),  
+   
+V- điện thế (so với 1 gốc chung) 
+– Mạch hỗ cảm, nguồn phụ thuộc  cả hai thành phần nguồn 
+và tác nhân điều khiển phải nằm cùng 1 phía  (trong nội 
+mạng/mạch ngoài) 
+Ví dụ 
+
+--- Page 5 ---
+Ts. Nguyễn Thanh Nam,  “Giải Tích Mạch” 
+05/04/2025 
+Tp.HCM
+BK
+Định lý Thévénin - Norton 
+Sơ đồ tương đương mạng một cửa tuyến tính 
+– Ta có thể thay thế tương đương mạng hai cực 
+ (một cửa) tuyến tính bởi một nguồn áp  
+có trị E0=Uo – áp hở mạch, nối tiếp với  
+tổng trở tương đương Zeq của mạng Sơ đồ Thévénin 
+Zeq 
+Eo 
+I 
+U 
+I 
+U 
+–
+Ta có thể thay thế tương đương mạng hai cực 
+ (một cửa) tuyến tính bởi một nguồn dòng có  
+trị  J0=Icc  - dòng ngắn mạch, mắc song song 
+với tổng dẫn (tổng trở) tương đương Yeq Sơ đồ Norton 
+Yeq 
+Jo 
+
+--- Page 6 ---
+Ts. Nguyễn Thanh Nam,  “Giải Tích Mạch” 
+05/04/2025 
+Tp.HCM
+BK
+Tìm Sơ đồ Thévénin - Norton 
+J0
+gtd
++
+u
+-
+i
++
+_
+rtd
+e0
++
+u
+-
+i
+U = E0-Ztđ.I 
+I = J0-Ytd.U 
+ Xác định một quan hệ tuyến tính giữa u và i 
+ Dựng sơ đồ từ biểu thức tuyến tính ! 
+DC và 
+AC (Phức) 
+
+--- Page 7 ---
+Ts. Nguyễn Thanh Nam,  “Giải Tích Mạch” 
+05/04/2025 
+Tp.HCM
+BK
+Bổ sung … (Thévénin – Norton) 
+  Ngắn mạch và Hở mạch 
+– Áp hở mạch Uo / Uhm  
+Hiệu điện thế giữa hai cực khi I=0  
+– Dòng ngắn mạch Io / Inm  
+Dòng khi ngắn mạch, u=0 
+– Nếu Uo#0 (Inm#0) mạng tích cực,  
+Ngược lại là mạng thụ động 
+ và … Tổng trở tương đương Zeq/ 
+ 
+- Tổng trở vào (tại cửa) ZV=Uv/Iv 
+uo 
+ihm 
+uv 
+iv 
+
+--- Page 8 ---
+Ts. Nguyễn Thanh Nam,  “Giải Tích Mạch” 
+05/04/2025 
+Tp.HCM
+BK
+Thiết lập sơ đồ Thévénin - Norton 
+ Zeq tính bởi phép biến đổi tương đương 
+– Cho tất cả các nguồn độc lập bằng không. 
+– Ghép nối tiếp, song song, Y-, ... 
+– Không dùng được khi có nguồn phụ thuộc,... 
+ Tổng trở Thévénin  từ sơ đồ  
+ Zeq = ZT = Eo/Jo = Uhm/ Inm 
+– Sự tương đương giữa 02 sơ đồ : 
+ Yeq = 1/ Zeq  và  Eo = Zeq.Jo  (Jo = Yeq.Eo) 
+– Khi mạng thụ động 0/0 ?? 
+
+--- Page 9 ---
+Ts. Nguyễn Thanh Nam,  “Giải Tích Mạch” 
+05/04/2025 
+Tp.HCM
+BK
+Thiết lập sơ đồ Thévénin - Norton 
+  Tổng trở vào – tương đương 
+– Triệt tiêu các nguồn độc lập bên trong 
+– Kích thích tại cửa vào bằng E (/ J) :  
+“hàm/biểu thức” hoặc một giá trị số cụ thể 
+– Tìm dòng i (áp u) trên cửa vào 
+ Tính tổng trở vào :  
+ Ztđ = Zv = E / I  (= U / J ) 
+– Phương pháp tổng quát nhất ! 
+e 
+i 
+u 
+J 
+
+--- Page 10 ---
+Ts. Nguyễn Thanh Nam,  “Giải Tích Mạch” 
+05/04/2025 
+Tp.HCM
+BK
+Ứng dụng sơ đồ Thévénin - Norton 
+1. Đơn giản hóa mạch  phép bđ tương đương 
+ Sử dụng hiệu quả ở chế độ xác lập (và quá độ) 
+ Tạo mạch tđ với một nguồn kích thích tổng quát 
+2.  Tăng cường hiệu suất tính toán “Một nguồn 
+Thévénin nuôi nhiều loại tải – từng tải một ! 
+3.  Tạo thuận lợi giải bài toán Pmax – hòa hợp tải 
+ Ptmax  khi   Zch = Z*eq (Thévénin) … ví dụ ! 
++ … 
+
+--- Page 11 ---
+Ts. Nguyễn Thanh Nam,  “Giải Tích Mạch” 
+05/04/2025 
+Tp.HCM
+BK
+Phối hợp trở kháng - Hòa hợp tải  Pt
+max 
+Công suất truyền tới tải Pt 
+– Tải Zt và nguồn thực (E, Zn= Rn + jXn) 
+– Xét công suất - trên tải Zt = Rt + jXt 
+Phối hợp trở kháng - hòa hợp tải 
+– Điều kiện cực đại của công suất phụ tải – hòa hợp tải 
+Lưu ý điều kiện này không tương ứng với cực đại của CS phát/nguồn 
+– Cực đại Pt
+max ứng với (Xt = -Xn) và (Rt = Rn) hay (Zt = Zn*) 
+ 
+(Trong truyền sóng, tín hiệu … tải hòa hợp là Zt = Zc tổng trở sóng) 
+E
+Zn
+Zt
+I
+t
+n
+Z
+Z
+E
+I
+
+
+2
+2
+2
+2
+)
+(
+)
+(
+t
+n
+t
+n
+t
+t
+t
+X
+X
+R
+R
+E
+R
+I
+R
+P
+
+
+
+
+
+
+
+
+--- Page 12 ---
+Phối hợp trở kháng - Hòa hợp tải  Pt
+max 
+Khi mắc tải Zt có thể thay đổi tùy ý vào mạng Thévénin … 
+Tìm Rt và Xt  để Công suất trên tải Pt MAX ? 
+Chọn : Xt = - Xn 
+  Rt=Rn= R 
+Pt  MAX 
+RMS 
+E=Em/q 
+.
+Zn=Rn+jXn 
+Zt= Rt+jXt 
+a
+b
+𝑃𝑡= 𝑅𝑡
+𝐼𝑚
+2
+2 =
+𝑅𝑡𝐸𝑚
+2 2
+ 
+(𝑅𝑛+𝑅𝑡)2 + 𝑋𝑛+ 𝑋𝑡2 
+𝑃𝑡= 𝑅𝑡𝐸𝑚
+2 2
+ 
+(𝑅𝑛+𝑅𝑡) ≤𝐸𝑚
+2 2
+ 
+4𝑅
+ 
+Khi  Zt = Zn* 
+𝑷𝒕
+𝒎𝒂𝒙= 𝑬𝟐
+𝟒𝑹 
+(Cộng hưởng X=0  Tải hòa hợp) 
+
+--- Page 13 ---
+Ts. Nguyễn Thanh Nam,  “Giải Tích Mạch” 
+05/04/2025 
+Tp.HCM
+BK
+Bài toán CS cực đại – Mạng Thévénin 
+ Đưa mạch về dạng nguồn Thévénin 
+– Với  
+E = U0  
+áp hở mạch  
+– Zn= Rn + jXn   tổng trở tương đương 
+ Áp dụng điều kiện phối hợp trở kháng  
+– Tìm tải hòa hợp của nguồn Thévénin – để công suất cực đại … 
+Lưu ý: thực tế thường chỉ có thể thay đổi Xn … với Rn không đổi (hoặc 
+ngược lại)  áp dụng khảo sát hàm số tìm cực đại !!! 
+E
+Zn
+Zt
+I
+
+--- Page 14 ---
+Ts. Nguyễn Thanh Nam,  “Giải Tích Mạch” 
+05/04/2025 
+Tp.HCM
+BK
+  Thévénin - Norton ? 
+  
+Tìm Zt  Pt  Max? 
+  Max Pt 
+(3
+4)20
+90
+(3
+4) (5
+10)
+10 0
+o
+j
+o
+co
+j
+j
+U
+V
+
+
+
+
+
+
+
+
+𝐔 hm 
+𝐈 nm = ?? 
+++… Sơ đồ Thévénin và hòa hợp tải 
+Pmax=102/(4*5) = 5W 
+E
+Zn
+Zt
+I
+(3
+4)(5
+10)
+0
+3
+4 5
+10
+...
+5
+2,5
+j
+j
+j
+j
+Z
+j
+
+
+
+
+
+
+
+
+= 5 - j2,5 
+Không có  
+nguồn  
+phụ thuộc 
+Tp.HCM
+BK
+NTNam 
+2020 
+*
+0
+5,59 26,57o
+tZ
+Z
+
+
+
+
+= 5 + j2,5 
+
+--- Page 15 ---
+Ts. Nguyễn Thanh Nam,  “Giải Tích Mạch” 
+05/04/2025 
+Tp.HCM
+BK
+Ví dụ : Ứng dụng sơ đồ Thévénin  Ptmax  
+•Tìm Zt  Ptmax 
+•Tìm R  
+ PRmax 
+E
+Zn
+Zt
+I
+I 
+

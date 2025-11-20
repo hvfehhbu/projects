@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Chuẩn Bị Thí Nghiệm TN2 - Mạch Điện Xoay Chiều (AC)</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --border-color: #e2e8f0;
+            --card-bg: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3 {
+            color: var(--primary-color);
+        }
+
+        h1 {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            margin-top: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 5px;
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .experiment-block {
+            background-color: #f1f5f9;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .formula {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 10px 0;
+            display: inline-block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid var(--border-color);
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #e2e8f0;
+        }
+
+        .step-list {
+            list-style-type: decimal;
+            padding-left: 20px;
+        }
+
+        .wiring-diagram {
+            background-color: #fff7ed;
+            padding: 15px;
+            border: 1px dashed #f97316;
+            border-radius: 4px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>BÀI CHUẨN BỊ THÍ NGHIỆM BÀI 2: KHẢO SÁT MẠCH ĐIỆN XOAY CHIỀU (AC)</h1>
+
+        <div class="section" id="muc-dich">
+            <h2>A. MỤC ĐÍCH</h2>
+            <p>Bài thí nghiệm giúp sinh viên khảo sát các đặc trưng của một mạch điện trong trường hợp nguồn tác động
+                lên mạch là nguồn điều hòa (nguồn xoay chiều AC). Qua đó hiểu rõ phương pháp biên độ (hiệu dụng) phức,
+                cách dựng đồ thị vector, tính toán công suất và các đặc tính thay đổi theo tần số của mạch AC.</p>
+        </div>
+
+        <div class="section" id="dac-diem">
+            <h2>B. ĐẶC ĐIỂM</h2>
+            <p>Phân tích mạch xác lập điều hòa thông qua tính toán trên mạch phức. Luật Ohm dạng phức:
+                $$ \dot{U} = Z.\dot{I} $$
+            </p>
+            <ul>
+                <li><strong>Xác định \(|Z|\):</strong> Tỷ số trị biên độ (hoặc hiệu dụng) của áp và dòng trên nhánh.
+                </li>
+                <li><strong>Xác định \(\varphi\):</strong> Dùng dao động ký với phương pháp so pha trực tiếp (đo
+                    \(\Delta t\)) hoặc đồ thị
+                    Lissajous.
+                    <br>Công thức tính góc lệch pha: $$ \varphi = \frac{\Delta t}{T} \cdot 360^\circ $$
+                </li>
+                <li><strong>Cộng hưởng:</strong> Hiện tượng áp và dòng cùng pha.
+                    <ul>
+                        <li>Cộng hưởng nối tiếp (cộng hưởng áp): \(Z_{min}\), \(I_{max}\).</li>
+                        <li>Cộng hưởng song song (cộng hưởng dòng): \(Z_{max}\), \(U_{max}\).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="section" id="phan-thi-nghiem-ac">
+            <h2>C. PHẦN THÍ NGHIỆM MẠCH AC</h2>
+            <p><strong>Thông số mạch thí nghiệm:</strong> \(C = 0.047 \mu F\), \(L = 100 mH\), \(R = 1 k\Omega\), \(R_0
+                = 1 k\Omega\).</p>
+
+            <!-- II. Đo trở kháng tụ điện -->
+            <div class="experiment-block">
+                <h3>II. ĐO TRỞ KHÁNG TỤ ĐIỆN</h3>
+
+                <h4>1. Mạch thí nghiệm</h4>
+                <p>Mạch RC nối tiếp (Hình 1.2.2 trong tài liệu TN). Nguồn xoay chiều nối tiếp với R và C.</p>
+
+                <h4>2. Tính toán lý thuyết</h4>
+                <p>Với \(f = 2 kHz\), \(C = 0.047 \mu F\):</p>
+                <ul>
+                    <li>Dung kháng: $$ Z_C = \frac{1}{2\pi f C} $$</li>
+                    <li>Tính toán: \( Z_C = \frac{1}{2 \cdot \pi \cdot 2000 \cdot 0.047 \cdot 10^{-6}} \approx
+                        \mathbf{1693 \Omega} \)</li>
+                    <li>Góc lệch pha \(\varphi_C\) (giữa \(u_C\) và \(i_C\)): Lý thuyết là \(\mathbf{-90^\circ}\).</li>
+                </ul>
+
+                <h4>3. Sơ đồ nối dây</h4>
+                <div class="wiring-diagram">
+                    <p><strong>Mô phỏng sơ đồ nối dây:</strong></p>
+                    <svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Function Generator -->
+                        <rect x="20" y="50" width="120" height="80" fill="#e0e0e0" stroke="black" stroke-width="2" />
+                        <text x="80" y="80" text-anchor="middle" font-family="Arial" font-size="12">FUNC GEN</text>
+                        <circle cx="120" cy="100" r="4" fill="red" /> <text x="130" y="105" font-size="10">+</text>
+                        <circle cx="120" cy="120" r="4" fill="black" /> <text x="130" y="125" font-size="10">-</text>
+
+                        <!-- Circuit Components -->
+                        <rect x="200" y="80" width="60" height="20" fill="white" stroke="black" />
+                        <text x="230" y="95" text-anchor="middle" font-size="12">R</text>
+
+                        <line x1="290" y1="80" x2="290" y2="100" stroke="black" stroke-width="2" />
+                        <line x1="310" y1="80" x2="310" y2="100" stroke="black" stroke-width="2" />
+                        <text x="300" y="75" text-anchor="middle" font-size="12">C</text>
+
+                        <!-- Wiring -->
+                        <line x1="120" y1="100" x2="200" y2="90" stroke="red" stroke-width="2" /> <!-- Gen+ to R -->
+                        <line x1="260" y1="90" x2="290" y2="90" stroke="black" stroke-width="2" /> <!-- R to C -->
+                        <line x1="310" y1="90" x2="350" y2="90" stroke="black" stroke-width="2" /> <!-- C out -->
+                        <line x1="350" y1="90" x2="350" y2="120" stroke="black" stroke-width="2" /> <!-- to GND -->
+                        <line x1="120" y1="120" x2="350" y2="120" stroke="black" stroke-width="2" />
+                        <!-- Gen- to GND -->
+
+                        <!-- Oscilloscope -->
+                        <rect x="400" y="50" width="150" height="100" fill="#d1fae5" stroke="black" stroke-width="2" />
+                        <text x="475" y="70" text-anchor="middle" font-family="Arial" font-size="12">OSCILLOSCOPE</text>
+
+                        <!-- CH1 Probes -->
+                        <text x="420" y="90" font-size="10">CH1 (uR)</text>
+                        <path d="M 420 100 Q 350 150 200 90" stroke="blue" stroke-width="2" fill="none"
+                            stroke-dasharray="5,5" />
+                        <path d="M 430 100 Q 350 160 260 90" stroke="black" stroke-width="2" fill="none"
+                            stroke-dasharray="5,5" />
+
+                        <!-- CH2 Probes -->
+                        <text x="420" y="120" font-size="10">CH2 (uC)</text>
+                        <path d="M 420 130 Q 380 180 290 90" stroke="green" stroke-width="2" fill="none"
+                            stroke-dasharray="5,5" />
+                        <path d="M 430 130 Q 380 190 310 90" stroke="black" stroke-width="2" fill="none"
+                            stroke-dasharray="5,5" />
+
+                        <text x="300" y="250" text-anchor="middle" font-size="12" fill="#666">Lưu ý: Điểm chung đất
+                            (GND) của dao động ký kẹp giữa R và C</text>
+                    </svg>
+                </div>
+
+                <h4>4. Các bước làm thí nghiệm</h4>
+                <ul class="step-list">
+                    <li>Chỉnh máy phát sóng: Sóng sin, biên độ 2V, tần số 2kHz.</li>
+                    <li>Đo biên độ áp trên R (\(U_{Rm}\)) và trên C (\(U_{Cm}\)) bằng dao động ký.</li>
+                    <li>Tính dòng điện biên độ: \( I_m = \frac{U_{Rm}}{R} \).</li>
+                    <li>Tính trở kháng tụ: \( |Z_C| = \frac{U_{Cm}}{I_m} \).</li>
+                    <li>Đo góc lệch pha bằng phương pháp so pha trực tiếp (đo \(\Delta t\) trên dao động ký).</li>
+                    <li>Lặp lại với \(f = 5 kHz\) và \(f = 10 kHz\).</li>
+                </ul>
+
+                <h4>5. Bảng số liệu (Lý thuyết)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tần số</th>
+                            <th>Um (V)</th>
+                            <th>Ucm (V)</th>
+                            <th>URm (V)</th>
+                            <th>Im (mA)</th>
+                            <th>|Zc| (Ω)</th>
+                            <th>φc (Lý thuyết)</th>
+                            <th>φc (Đo)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2 kHz</td>
+                            <td>2.0</td>
+                            <td>1.73</td>
+                            <td>1.02</td>
+                            <td>1.02</td>
+                            <td>1693</td>
+                            <td>-90°</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5 kHz</td>
+                            <td>2.0</td>
+                            <td>1.12</td>
+                            <td>1.65</td>
+                            <td>1.65</td>
+                            <td>677</td>
+                            <td>-90°</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10 kHz</td>
+                            <td>2.0</td>
+                            <td>0.64</td>
+                            <td>1.90</td>
+                            <td>1.90</td>
+                            <td>339</td>
+                            <td>-90°</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- III. Mạch RC nối tiếp -->
+            <div class="experiment-block">
+                <h3>III. MẠCH RC NỐI TIẾP</h3>
+
+                <h4>1. Mạch thí nghiệm</h4>
+                <p>Mạch RC nối tiếp (Hình 1.2.3). Nguồn nối tiếp R và C.</p>
+
+                <h4>2. Tính toán lý thuyết</h4>
+                <p>Với \(R = 1 k\Omega\), \(C = 0.047 \mu F\), \(f = 2 kHz\):</p>
+                <ul>
+                    <li>\(Z_C \approx 1693 \Omega\).</li>
+                    <li>Tổng trở: $$ Z = \sqrt{R^2 + Z_C^2} = \sqrt{1000^2 + 1693^2} \approx \mathbf{1966 \Omega} $$
+                    </li>
+                    <li>Góc lệch pha \(\varphi\) (u so với i): $$ \varphi = \arctan\left(\frac{-Z_C}{R}\right) =
+                        \arctan\left(\frac{-1693}{1000}\right) \approx \mathbf{-59.4^\circ} $$</li>
+                </ul>
+
+                <h4>3. Sơ đồ nối dây</h4>
+                <div class="wiring-diagram">
+                    <p><strong>Mô phỏng sơ đồ nối dây:</strong></p>
+                    <svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Function Generator -->
+                        <rect x="20" y="50" width="100" height="60" fill="#e0e0e0" stroke="black" />
+                        <text x="70" y="80" text-anchor="middle" font-size="10">FUNC GEN</text>
+
+                        <!-- DMM Ammeter -->
+                        <circle cx="180" cy="50" r="20" fill="#fff" stroke="black" />
+                        <text x="180" y="55" text-anchor="middle" font-weight="bold">A</text>
+
+                        <!-- Components -->
+                        <rect x="250" y="40" width="40" height="20" fill="white" stroke="black" /> <text x="270" y="55"
+                            text-anchor="middle" font-size="10">R</text>
+                        <line x1="320" y1="40" x2="320" y2="60" stroke="black" />
+                        <line x1="330" y1="40" x2="330" y2="60" stroke="black" /> <text x="325" y="35"
+                            text-anchor="middle" font-size="10">C</text>
+
+                        <!-- Wiring -->
+                        <line x1="120" y1="50" x2="160" y2="50" stroke="red" stroke-width="2" />
+                        <line x1="200" y1="50" x2="250" y2="50" stroke="red" stroke-width="2" />
+                        <line x1="290" y1="50" x2="320" y2="50" stroke="black" stroke-width="2" />
+                        <line x1="330" y1="50" x2="380" y2="50" stroke="black" stroke-width="2" />
+                        <line x1="380" y1="50" x2="380" y2="100" stroke="black" stroke-width="2" />
+                        <line x1="120" y1="100" x2="380" y2="100" stroke="black" stroke-width="2" />
+
+                        <!-- DMM Voltmeter -->
+                        <circle cx="270" cy="120" r="20" fill="#fff" stroke="black" />
+                        <text x="270" y="125" text-anchor="middle" font-weight="bold">V</text>
+                        <path d="M 250 120 Q 200 120 120 80" stroke="black" stroke-dasharray="4,2" fill="none" />
+                        <path d="M 290 120 Q 350 120 380 80" stroke="black" stroke-dasharray="4,2" fill="none" />
+
+                        <text x="300" y="180" text-anchor="middle" font-size="12" fill="#666">DMM đo dòng (nối tiếp) và
+                            đo áp (song song)</text>
+                    </svg>
+                </div>
+
+                <h4>4. Các bước làm thí nghiệm</h4>
+                <ul class="step-list">
+                    <li>Chỉnh máy phát: Sin, 2V, 2kHz.</li>
+                    <li>Dùng DMM đo \(I, U, U_R, U_C\).</li>
+                    <li>Dùng dao động ký đo \(\Delta t\) giữa \(u(t)\) và \(i(t)\) (thông qua \(u_R\)). Tính
+                        \(\varphi\).</li>
+                    <li>Vẽ đồ thị vector điện áp.</li>
+                    <li>Tính công suất: \( S = U.I \), \( P = U.I.\cos\varphi \), \( Q = U.I.\sin\varphi \).</li>
+                </ul>
+
+                <h4>5. Bảng số liệu (Lý thuyết - 2kHz)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>U (Vrms)</th>
+                            <th>UC (Vrms)</th>
+                            <th>UR (Vrms)</th>
+                            <th>I (mA rms)</th>
+                            <th>|Z| (Ω)</th>
+                            <th>φ (Lý thuyết)</th>
+                            <th>φ (Đo)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1.41</td>
+                            <td>1.22</td>
+                            <td>0.72</td>
+                            <td>0.72</td>
+                            <td>1966</td>
+                            <td>-59.4°</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- IV. Đo trở kháng cuộn dây -->
+            <div class="experiment-block">
+                <h3>IV. ĐO TRỞ KHÁNG CUỘN DÂY</h3>
+
+                <h4>1. Mạch thí nghiệm</h4>
+                <p>Mạch RL nối tiếp (Hình 1.2.4). Cuộn dây thực tế có điện trở nội \(R_L\).</p>
+
+                <h4>2. Tính toán lý thuyết</h4>
+                <p>Với \(L = 100 mH\), \(f = 2 kHz\):</p>
+                <ul>
+                    <li>Cảm kháng: $$ Z_{L(pure)} = 2\pi f L = 2 \cdot \pi \cdot 2000 \cdot 0.1 \approx \mathbf{1257
+                        \Omega} $$</li>
+                    <li>Tổng trở cuộn dây thực: $$ Z_{coil} = \sqrt{R_{L(noi)}^2 + Z_{L(pure)}^2} $$ (\(R_{L(noi)}\) sẽ
+                        xác định khi đo).</li>
+                    <li>Góc lệch pha \(\varphi_L\): $$ \varphi_L = \arctan\left(\frac{Z_{L(pure)}}{R_{L(noi)}}\right) $$
+                    </li>
+                </ul>
+
+                <h4>3. Sơ đồ nối dây</h4>
+                <div class="wiring-diagram">
+                    <p><strong>Mô phỏng sơ đồ nối dây:</strong></p>
+                    <svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Function Generator -->
+                        <rect x="20" y="50" width="100" height="60" fill="#e0e0e0" stroke="black" />
+                        <text x="70" y="80" text-anchor="middle" font-size="10">FUNC GEN</text>
+
+                        <!-- Components -->
+                        <rect x="180" y="40" width="40" height="20" fill="white" stroke="black" /> <text x="200" y="55"
+                            text-anchor="middle" font-size="10">R</text>
+                        <!-- Inductor Symbol -->
+                        <path d="M 250 50 Q 260 30 270 50 Q 280 30 290 50 Q 300 30 310 50" stroke="black" fill="none" />
+                        <text x="280" y="70" text-anchor="middle" font-size="10">L</text>
+
+                        <!-- Wiring -->
+                        <line x1="120" y1="50" x2="180" y2="50" stroke="red" stroke-width="2" />
+                        <line x1="220" y1="50" x2="250" y2="50" stroke="black" stroke-width="2" />
+                        <line x1="310" y1="50" x2="350" y2="50" stroke="black" stroke-width="2" />
+                        <line x1="350" y1="50" x2="350" y2="100" stroke="black" stroke-width="2" />
+                        <line x1="120" y1="100" x2="350" y2="100" stroke="black" stroke-width="2" />
+
+                        <!-- Oscilloscope Probes -->
+                        <text x="450" y="50" font-size="12" fill="blue">OSCILLOSCOPE</text>
+                        <text x="450" y="70" font-size="10">CH1: Đo uR</text>
+                        <text x="450" y="90" font-size="10">CH2: Đo uL</text>
+
+                        <text x="300" y="150" text-anchor="middle" font-size="12" fill="#666">Thay tụ C bằng cuộn cảm
+                            L</text>
+                    </svg>
+                </div>
+
+                <h4>4. Các bước làm thí nghiệm</h4>
+                <ul class="step-list">
+                    <li>Chỉnh máy phát: Sin, 2V. Thay đổi tần số 2kHz, 5kHz, 10kHz.</li>
+                    <li>Đo biên độ áp trên R (\(U_{Rm}\)) và trên L (\(U_{Lm}\)).</li>
+                    <li>Tính \( I_m = \frac{U_{Rm}}{R} \). Tính \( |Z_L| = \frac{U_{Lm}}{I_m} \).</li>
+                    <li>Đo góc lệch pha \(\varphi_L\) giữa \(u_L\) và \(i\).</li>
+                </ul>
+
+                <h4>5. Bảng số liệu (Lý thuyết)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tần số</th>
+                            <th>Um (V)</th>
+                            <th>ULm (V)</th>
+                            <th>URm (V)</th>
+                            <th>Im (mA)</th>
+                            <th>|ZL| (Ω)</th>
+                            <th>φL (Lý thuyết)</th>
+                            <th>φL (Đo)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2 kHz</td>
+                            <td>2.0</td>
+                            <td>1.43</td>
+                            <td>1.11</td>
+                            <td>1.11</td>
+                            <td>1292</td>
+                            <td>76.6°</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>5 kHz</td>
+                            <td>2.0</td>
+                            <td>1.91</td>
+                            <td>0.61</td>
+                            <td>0.61</td>
+                            <td>3156</td>
+                            <td>84.5°</td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>10 kHz</td>
+                            <td>2.0</td>
+                            <td>1.99</td>
+                            <td>0.31</td>
+                            <td>0.31</td>
+                            <td>6290</td>
+                            <td>87.3°</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- V. Mạch RL nối tiếp -->
+            <div class="experiment-block">
+                <h3>V. MẠCH RL NỐI TIẾP</h3>
+
+                <h4>1. Mạch thí nghiệm</h4>
+                <p>Mạch RL nối tiếp (Hình 1.2.5). (Lưu ý L ở đây là cuộn dây thực có \(R_L\)).</p>
+
+                <h4>2. Tính toán lý thuyết</h4>
+                <p>Với \(R = 1 k\Omega\), \(L = 100 mH\), \(f = 2 kHz\), giả sử \(R_{L(noi)} \approx 300 \Omega\):</p>
+                <ul>
+                    <li>\(R_{tong} = R + R_L = 1000 + 300 = 1300 \Omega\).</li>
+                    <li>\(Z_{L(pure)} \approx 1257 \Omega\).</li>
+                    <li>Tổng trở: $$ Z = \sqrt{R_{tong}^2 + Z_{L(pure)}^2} = \sqrt{1300^2 + 1257^2} \approx \mathbf{1808
+                        \Omega} $$</li>
+                    <li>Góc lệch pha \(\varphi\): $$ \varphi = \arctan\left(\frac{Z_{L(pure)}}{R_{tong}}\right) =
+                        \arctan\left(\frac{1257}{1300}\right) \approx \mathbf{44^\circ} $$</li>
+                </ul>
+
+                <h4>3. Sơ đồ nối dây</h4>
+                <div class="wiring-diagram">
+                    <p>Tương tự mạch RC nối tiếp, thay C bằng L.</p>
+                </div>
+
+                <h4>4. Các bước làm thí nghiệm</h4>
+                <ul class="step-list">
+                    <li>Đo các giá trị \(U, U_L, U_R, I\) bằng DMM.</li>
+                    <li>Đo góc lệch pha \(\varphi\) bằng dao động ký.</li>
+                    <li>Xác định điện trở thuần của cuộn dây \(R_L\) tại 2kHz.</li>
+                    <li>Tính các công suất \(S, P, Q\).</li>
+                </ul>
+
+                <h4>5. Bảng số liệu (Lý thuyết - 2kHz)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>U (Vrms)</th>
+                            <th>UL (Vrms)</th>
+                            <th>UR (Vrms)</th>
+                            <th>I (mA rms)</th>
+                            <th>|Z| (Ω)</th>
+                            <th>φ (Lý thuyết)</th>
+                            <th>φ (Đo)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1.41</td>
+                            <td>1.01</td>
+                            <td>0.78</td>
+                            <td>0.78</td>
+                            <td>1808</td>
+                            <td>44°</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- VI. Mạch RLC nối tiếp -->
+            <div class="experiment-block">
+                <h3>VI. MẠCH RLC NỐI TIẾP</h3>
+
+                <h4>1. Mạch thí nghiệm</h4>
+                <p>Mạch RLC nối tiếp (Hình 1.2.6). R nối tiếp L nối tiếp C.</p>
+
+                <h4>2. Tính toán lý thuyết</h4>
+                <p>Với \(R=1k\Omega\), \(L=100mH\), \(C=0.047\mu F\), \(f=2kHz\):</p>
+                <ul>
+                    <li>\(Z_L \approx 1257 \Omega\). \(Z_C \approx 1693 \Omega\).</li>
+                    <li>\(Z_{mach} = \sqrt{(R+R_L)^2 + (Z_L - Z_C)^2}\).</li>
+                    <li>Giả sử \(R_L=300\Omega\): $$ Z = \sqrt{1300^2 + (1257 - 1693)^2} = \sqrt{1300^2 + (-436)^2}
+                        \approx \mathbf{1371 \Omega} $$</li>
+                    <li>Góc pha $$ \varphi = \arctan\left(\frac{Z_L - Z_C}{R+R_L}\right) =
+                        \arctan\left(\frac{-436}{1300}\right) \approx \mathbf{-18.5^\circ} $$ (Tính dung).</li>
+                </ul>
+
+                <h4>3. Sơ đồ nối dây</h4>
+                <div class="wiring-diagram">
+                    <p><strong>Mô phỏng sơ đồ nối dây:</strong></p>
+                    <svg width="600" height="200" viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="50" width="80" height="60" fill="#e0e0e0" stroke="black" />
+                        <text x="60" y="80" text-anchor="middle" font-size="10">GEN</text>
+
+                        <rect x="150" y="40" width="40" height="20" fill="white" stroke="black" /> <text x="170" y="55"
+                            text-anchor="middle" font-size="10">R</text>
+                        <path d="M 220 50 Q 230 30 240 50 Q 250 30 260 50" stroke="black" fill="none" /> <text x="240"
+                            y="70" text-anchor="middle" font-size="10">L</text>
+                        <line x1="290" y1="40" x2="290" y2="60" stroke="black" />
+                        <line x1="300" y1="40" x2="300" y2="60" stroke="black" /> <text x="295" y="35"
+                            text-anchor="middle" font-size="10">C</text>
+
+                        <line x1="100" y1="50" x2="150" y2="50" stroke="red" stroke-width="2" />
+                        <line x1="190" y1="50" x2="220" y2="50" stroke="black" stroke-width="2" />
+                        <line x1="260" y1="50" x2="290" y2="50" stroke="black" stroke-width="2" />
+                        <line x1="300" y1="50" x2="350" y2="50" stroke="black" stroke-width="2" />
+                        <line x1="350" y1="50" x2="350" y2="100" stroke="black" stroke-width="2" />
+                        <line x1="100" y1="100" x2="350" y2="100" stroke="black" stroke-width="2" />
+                    </svg>
+                </div>
+
+                <h4>4. Các bước làm thí nghiệm</h4>
+                <ul class="step-list">
+                    <li>Đo \(U, U_L, U_C, U_R, I\) bằng DMM.</li>
+                    <li>Đo góc lệch pha \(\varphi\).</li>
+                    <li>Kiểm chứng cân bằng công suất: \(P_{nguon} = P_R + P_{L(noi)}\).</li>
+                </ul>
+
+                <h4>5. Bảng số liệu (Lý thuyết - 2kHz)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>U (Vrms)</th>
+                            <th>UL (Vrms)</th>
+                            <th>UC (Vrms)</th>
+                            <th>UR (Vrms)</th>
+                            <th>I (mA rms)</th>
+                            <th>|Z| (Ω)</th>
+                            <th>φ (Lý thuyết)</th>
+                            <th>φ (Đo)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1.41</td>
+                            <td>1.33</td>
+                            <td>1.74</td>
+                            <td>1.03</td>
+                            <td>1.03</td>
+                            <td>1371</td>
+                            <td>-18.5°</td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section" id="phan-thi-nghiem-cong-huong">
+            <h2>D. PHẦN THÍ NGHIỆM CỘNG HƯỞNG</h2>
+            <p><strong>Thông số:</strong> \(R = 1 k\Omega\), \(C = 0.047 \mu F\), \(L = 100 mH\), \(R_L \approx 300
+                \Omega\).</p>
+
+            <!-- II. Mạch cộng hưởng RLC nối tiếp -->
+            <div class="experiment-block">
+                <h3>II. MẠCH CỘNG HƯỞNG RLC NỐI TIẾP</h3>
+
+                <h4>1. Mạch thí nghiệm</h4>
+                <p>Hình 1.3.1. Nguồn nối tiếp với mạch RLC nối tiếp.</p>
+
+                <h4>2. Tính toán lý thuyết</h4>
+                <ul>
+                    <li>Tần số cộng hưởng: $$ f_0 = \frac{1}{2\pi\sqrt{LC}} $$</li>
+                    <li>Tính toán: \( f_0 = \frac{1}{2\pi\sqrt{0.1 \cdot 0.047 \cdot 10^{-6}}} \approx \mathbf{2321 Hz}
+                        \) (2.32 kHz).</li>
+                    <li>Tại \(f_0\): \(Z = R + R_L\) (nhỏ nhất), \(I_{max}\), \(U_{R(max)}\).</li>
+                    <li>Hệ số phẩm chất: $$ Q = \frac{1}{R+R_L}\sqrt{\frac{L}{C}} = \frac{1}{1300}\sqrt{\frac{0.1}{0.047
+                        \cdot 10^{-6}}} \approx \mathbf{1.12} $$</li>
+                    <li>Băng thông: $$ BW = \frac{f_0}{Q} \approx \frac{2321}{1.12} \approx \mathbf{2072 Hz} $$</li>
+                </ul>
+
+                <h4>3. Sơ đồ nối dây</h4>
+                <div class="wiring-diagram">
+                    <p>Nối tiếp R, L, C. Đo áp ra trên điện trở R (\(U_{out} = U_R\)) để xác định dòng cực đại.</p>
+                </div>
+
+                <h4>4. Các bước làm thí nghiệm</h4>
+                <ul class="step-list">
+                    <li>Chỉnh máy phát sóng sin, biên độ 2V.</li>
+                    <li>Thay đổi tần số từ 1kHz đến 10kHz để tìm \(f_0\) sao cho \(U_{out}\) (trên R) cực đại (hoặc
+                        \(U_{in}\) và \(U_{out}\) cùng
+                        pha).</li>
+                    <li>Vẽ đặc tuyến \(U_{out}(f)\).</li>
+                    <li>Tìm tần số cắt \(f_1, f_2\) (nơi \(U_{out} = \frac{U_{out(max)}}{\sqrt{2}}\)).</li>
+                    <li>Tính \(BW = f_2 - f_1\) và \(Q = \frac{f_0}{BW}\).</li>
+                </ul>
+
+                <h4>5. Bảng số liệu (Lý thuyết)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Đại lượng</th>
+                            <th>Tính theo lý thuyết</th>
+                            <th>Đo được</th>
+                            <th>% Sai số</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>f0 (Hz)</td>
+                            <td>2321</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>f1 (Hz)</td>
+                            <td>1285</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>f2 (Hz)</td>
+                            <td>3357</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>BW (Hz)</td>
+                            <td>2072</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Q</td>
+                            <td>1.12</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>RΣ (Ω)</td>
+                            <td>1300</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- III. Mạch cộng hưởng RLC song song -->
+            <div class="experiment-block">
+                <h3>III. MẠCH CỘNG HƯỞNG RLC SONG SONG</h3>
+
+                <h4>1. Mạch thí nghiệm</h4>
+                <p>Hình 1.3.2. Một điện trở R nối tiếp với khung cộng hưởng (L song song C).</p>
+
+                <h4>2. Tính toán lý thuyết</h4>
+                <ul>
+                    <li>Tần số cộng hưởng: $$ f_0 \approx \frac{1}{2\pi\sqrt{LC}} \approx \mathbf{2321 Hz} $$</li>
+                    <li>Tại cộng hưởng: Trở kháng khung LC cực đại, áp trên khung LC (\(U_{out}\)) cực đại.</li>
+                </ul>
+
+                <h4>3. Sơ đồ nối dây</h4>
+                <div class="wiring-diagram">
+                    <p><strong>Mô phỏng sơ đồ nối dây:</strong></p>
+                    <svg width="600" height="250" viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="20" y="80" width="80" height="60" fill="#e0e0e0" stroke="black" />
+                        <text x="60" y="110" text-anchor="middle" font-size="10">GEN</text>
+
+                        <!-- R series -->
+                        <rect x="150" y="70" width="40" height="20" fill="white" stroke="black" /> <text x="170" y="85"
+                            text-anchor="middle" font-size="10">R</text>
+
+                        <!-- Parallel LC -->
+                        <line x1="220" y1="80" x2="220" y2="40" stroke="black" />
+                        <line x1="220" y1="80" x2="220" y2="120" stroke="black" />
+
+                        <!-- L branch -->
+                        <path d="M 250 40 Q 260 20 270 40 Q 280 20 290 40" stroke="black" fill="none" /> <text x="270"
+                            y="60" text-anchor="middle" font-size="10">L</text>
+                        <line x1="220" y1="40" x2="250" y2="40" stroke="black" />
+                        <line x1="290" y1="40" x2="320" y2="40" stroke="black" />
+
+                        <!-- C branch -->
+                        <line x1="260" y1="110" x2="260" y2="130" stroke="black" />
+                        <line x1="270" y1="110" x2="270" y2="130" stroke="black" /> <text x="265" y="105"
+                            text-anchor="middle" font-size="10">C</text>
+                        <line x1="220" y1="120" x2="260" y2="120" stroke="black" />
+                        <line x1="270" y1="120" x2="320" y2="120" stroke="black" />
+
+                        <!-- Rejoin -->
+                        <line x1="320" y1="40" x2="320" y2="120" stroke="black" />
+                        <line x1="320" y1="80" x2="350" y2="80" stroke="black" />
+                        <line x1="350" y1="80" x2="350" y2="150" stroke="black" />
+                        <line x1="100" y1="150" x2="350" y2="150" stroke="black" />
+
+                        <!-- Wiring -->
+                        <line x1="100" y1="80" x2="150" y2="80" stroke="red" stroke-width="2" />
+                        <line x1="190" y1="80" x2="220" y2="80" stroke="black" stroke-width="2" />
+
+                        <text x="400" y="80" font-size="12" fill="blue">Đo Uout trên khung LC</text>
+                    </svg>
+                </div>
+
+                <h4>4. Các bước làm thí nghiệm</h4>
+                <ul class="step-list">
+                    <li>Thay đổi tần số để tìm \(f_0\) sao cho \(U_{out}\) cực đại.</li>
+                    <li>Vẽ đặc tuyến \(U_{out}(f)\).</li>
+                    <li>Tìm \(f_1, f_2\), tính \(BW\) và \(Q\).</li>
+                </ul>
+
+                <h4>5. Bảng số liệu (Lý thuyết)</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Đại lượng</th>
+                            <th>Tính theo lý thuyết</th>
+                            <th>Đo được</th>
+                            <th>% Sai số</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>f0 (Hz)</td>
+                            <td>2321</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>BW (Hz)</td>
+                            <td>(Phụ thuộc R tải)</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td>Q</td>
+                            <td>(Phụ thuộc R tải)</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

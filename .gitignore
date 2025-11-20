@@ -1,0 +1,19 @@
+# Bỏ qua file rác hệ thống
+*.log
+*.tmp
+Thumbs.db
+
+# Bỏ qua file rác biên dịch C/C++ (KeilC, VS Code)
+*.obj
+*.o
+*.hex
+*.bin
+*.elf
+*.build_log.htm
+*.dep
+
+# Bỏ qua file backup của Altium/Proteus
+*.PcbDoc.htm
+*.SchDoc.htm
+History/
+__Previews/

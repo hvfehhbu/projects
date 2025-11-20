@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sơ đồ Nguyên lý Mạch Thí nghiệm</title>
+    <style>
+        body { font-family: sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #f0f0f0; }
+        .container { background-color: white; padding: 20px; border: 1px solid #ccc; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); }
+        h1 { text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Sơ đồ Nguyên lý</h1>
+        <svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+
+    <defs>
+        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="8" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="#000" />
+        </marker>
+    </defs>
+    
+<line x1="100" y1="120" x2="50" y2="120" stroke="black" stroke-width="1.5" />
+<line x1="50" y1="120" x2="50" y2="230" stroke="black" stroke-width="1.5" />
+<line x1="50" y1="230" x2="100" y2="230" stroke="black" stroke-width="1.5" />
+<circle cx="50" cy="120" r="2.5" fill="black" />
+<circle cx="50" cy="230" r="2.5" fill="black" />
+<line x1="100" y1="80" x2="250" y2="100" stroke="black" stroke-width="1.5" />
+<circle cx="250" cy="100" r="2.5" fill="black" />
+<line x1="310" y1="100" x2="400" y2="100" stroke="black" stroke-width="1.5" />
+<circle cx="400" cy="100" r="2.5" fill="black" />
+<line x1="100" y1="270" x2="400" y2="250" stroke="black" stroke-width="1.5" />
+<circle cx="400" cy="250" r="2.5" fill="black" />
+<circle cx="100" cy="100" r="20" stroke="black" stroke-width="2" fill="none" />
+<path d="M 88.0 100 q 6.0 -16.0, 12.0 0 t 12.0 0" stroke="black" stroke-width="1.2000000000000002" fill="none" />
+<text x="125" y="75" font-size="12px" fill="black">+</text>
+<text x="125" y="132" font-size="12px" fill="black">-</text>
+<text x="45" y="100" font-size="12px" fill="black" dominant-baseline="middle" text-anchor="end">Vsine</text>
+<line x1="92.0" y1="270" x2="108.0" y2="270" stroke="black" stroke-width="2" />
+<line x1="96.0" y1="230" x2="104.0" y2="230" stroke="black" stroke-width="2" />
+<line x1="76.0" y1="274.0" x2="124.0" y2="226.0" stroke="black" stroke-width="1.5" marker-end="url(#arrowhead)" />
+<text x="113.0" y="275" font-size="12px" fill="black">+</text>
+<text x="109.0" y="235" font-size="12px" fill="black">-</text>
+<text x="45" y="250" font-size="12px" fill="black" dominant-baseline="middle" text-anchor="end">Vdc</text>
+<rect x="250" y="90.0" width="60" height="20" stroke="black" stroke-width="2" fill="none" />
+<text x="280.0" y="85.0" font-size="12px" fill="black" text-anchor="middle">R3</text>
+<polygon points="390.0,250 410.0,250 400,232.68" stroke="black" stroke-width="2" fill="none"/>
+<line x1="390.0" y1="232.68" x2="410.0" y2="232.68" stroke="black" stroke-width="2" />
+<line x1="400" y1="250" x2="400" y2="255" stroke="black" stroke-width="1.5" />
+<line x1="400" y1="232.68" x2="400" y2="100" stroke="black" stroke-width="1.5" />
+<text x="410" y="175.0" font-size="12px" fill="black" dominant-baseline="middle">D2</text>
+<line x1="400" y1="100" x2="400" y2="105" stroke="black" stroke-width="1.5" />
+<line x1="385.0" y1="105" x2="415.0" y2="105" stroke="black" stroke-width="2" />
+<line x1="390.0" y1="110" x2="410.0" y2="110" stroke="black" stroke-width="2" />
+<line x1="395.0" y1="115" x2="405.0" y2="115" stroke="black" stroke-width="2" />
+<text x="420.0" y="110" font-size="14px" fill="black" dominant-baseline="middle">GND</text>
+<text x="250" y="85" font-size="14px" fill="red" text-anchor="middle">CH1</text>
+<text x="410" y="85" font-size="14px" fill="blue" text-anchor="start">CH2</text>
+</svg>
+        <p><b>Chú thích:</b></p>
+        <ul>
+            <li><b>Vsine:</b> Nguồn điện áp xoay chiều.</li>
+            <li><b>Vdc:</b> Nguồn điện áp một chiều (có thể điều chỉnh).</li>
+            <li><b>R3:</b> Điện trở.</li>
+            <li><b>D2:</b> Diode.</li>
+            <li><b>CH1:</b> Điểm đo kênh 1 (thường là điện áp vào qua R3).</li>
+            <li><b>CH2:</b> Điểm đo kênh 2 (thường là điện áp ra sau R3/D2).</li>
+            <li><b>GND:</b> Điểm nối đất (tham chiếu 0V).</li>
+        </ul>
+         <p><i>Lưu ý: Thông số cụ thể của linh kiện (giá trị điện trở, loại diode, điện áp nguồn) không được ghi trên sơ đồ này vì không có trong hình ảnh gốc.</i></p>
+   </div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giải Bài Tập 28 - HW4-Ch03d</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+            --card-bg: #ffffff;
+        }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        h1, h2, h3 {
+            color: var(--primary-color);
+        }
+        .card {
+            background: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .circuit-diagram {
+            text-align: center;
+            margin: 20px 0;
+            padding: 20px;
+            background: #f1f5f9;
+            border-radius: 8px;
+        }
+        .result-box {
+            background: #dbeafe;
+            border-left: 4px solid var(--primary-color);
+            padding: 1rem;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+        code {
+            background: #e2e8f0;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Bài 28: Phương Pháp Xếp Chồng Theo Tần Số</h1>
+            <p><strong>Đề bài:</strong> Cho mạch điện như hình vẽ. Tìm biểu thức điện áp \( u(t) \) (điện áp trên tụ C).</p>
+            
+            <h3>Thông số mạch:</h3>
+            <ul>
+                <li>Nguồn DC: \( E = 20V \) (Nhánh 1)</li>
+                <li>Nguồn AC: \( e(t) = 10 + 60\sin(10t + 45^\circ) + 20\sqrt{2}\cos(20t) \) [V] (Nhánh 2)</li>
+                <li>Các phần tử:
+                    <ul>
+                        <li>Nhánh 1: \( R_1 = 40\Omega \)</li>
+                        <li>Nhánh 2: \( R_2 = 40\Omega, L_2 = 4H \)</li>
+                        <li>Nhánh 3: \( C = 5000\mu F = 5 \times 10^{-3} F \)</li>
+                        <li>Nhánh 4: \( R_3 = 10\Omega, L_3 = 1H \)</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Lời Giải Chi Tiết</h2>
+            <p>Áp dụng phương pháp xếp chồng, ta phân tích nguồn \( e(t) \) thành 3 thành phần tần số và giải mạch riêng biệt cho từng thành phần.</p>
+            <p>Nguồn \( e(t) \) có thể viết lại:</p>
+            $$ e(t) = \underbrace{10}_{DC} + \underbrace{60\cos(10t - 45^\circ)}_{\omega=10} + \underbrace{20\sqrt{2}\cos(20t)}_{\omega=20} $$
+            <p>Điện áp cần tìm: \( u(t) = u_{DC} + u_{\omega1} + u_{\omega2} \)</p>
+
+            <h3>1. Thành phần một chiều (DC, \( \omega = 0 \))</h3>
+            <p>
+                - Tụ điện C hở mạch (Open).<br>
+                - Cuộn cảm L nối tắt (Short).<br>
+                - Nguồn \( E = 20V \) tác động ở nhánh 1.<br>
+                - Thành phần DC của \( e(t) \) là \( E_2 = 10V \) tác động ở nhánh 2.
+            </p>
+            <p>Mạch trở thành 3 điện trở mắc song song (Nhánh 3 hở):</p>
+            <ul>
+                <li>Nhánh 1: Nguồn 20V nối tiếp \( R_1 = 40\Omega \)</li>
+                <li>Nhánh 2: Nguồn 10V nối tiếp \( R_2 = 40\Omega \)</li>
+                <li>Nhánh 4: \( R_3 = 10\Omega \) (nối đất)</li>
+            </ul>
+            <p>Dùng phương pháp điện thế nút tại A:</p>
+            $$ \frac{U_{DC} - 20}{40} + \frac{U_{DC} - 10}{40} + \frac{U_{DC}}{10} = 0 $$
+            $$ \Rightarrow U_{DC} \left( \frac{1}{40} + \frac{1}{40} + \frac{1}{10} \right) = \frac{20}{40} + \frac{10}{40} $$
+            $$ \Rightarrow U_{DC} \cdot 0.15 = 0.75 \Rightarrow U_{DC} = 5V $$
+
+            <h3>2. Thành phần xoay chiều \( \omega = 10 \) rad/s</h3>
+            <p>
+                - Nguồn: \( e_1(t) = 60\sin(10t + 45^\circ) = 60\cos(10t - 45^\circ) \)<br>
+                - Phasor: \( \dot{E}_1 = 60\angle-45^\circ \)<br>
+                - Nguồn DC \( E \) bị nối tắt (Short).
+            </p>
+            <p><strong>Tổng trở các nhánh:</strong></p>
+            <ul>
+                <li>\( Z_1 = R_1 = 40\Omega \)</li>
+                <li>\( Z_2 = R_2 + j\omega L_2 = 40 + j(10)(4) = 40 + j40 \Omega \)</li>
+                <li>\( Z_3 = \frac{1}{j\omega C} = \frac{1}{j(10)(0.005)} = -j20 \Omega \)</li>
+                <li>\( Z_4 = R_3 + j\omega L_3 = 10 + j(10)(1) = 10 + j10 \Omega \)</li>
+            </ul>
+            <p>Phương trình điện thế nút (nguồn dòng tương đương \( \frac{\dot{E}_1}{Z_2} \) bơm vào nút A):</p>
+            $$ \dot{U}_1 \left( \frac{1}{Z_1} + \frac{1}{Z_2} + \frac{1}{Z_3} + \frac{1}{Z_4} \right) = \frac{\dot{E}_1}{Z_2} $$
+            <p>Thay số và tính toán:</p>
+            $$ \dot{U}_1 \approx 12.00\angle-81.87^\circ \text{ V} $$
+            <p>Biểu thức tức thời: \( u_1(t) = 12\cos(10t - 81.87^\circ) \) V</p>
+
+            <h3>3. Thành phần xoay chiều \( \omega = 20 \) rad/s</h3>
+            <p>
+                - Nguồn: \( e_2(t) = 20\sqrt{2}\cos(20t) \)<br>
+                - Phasor: \( \dot{E}_2 = 20\sqrt{2}\angle0^\circ \approx 28.28\angle0^\circ \)
+            </p>
+            <p><strong>Tổng trở các nhánh:</strong></p>
+            <ul>
+                <li>\( Z'_1 = 40\Omega \)</li>
+                <li>\( Z'_2 = 40 + j(20)(4) = 40 + j80 \Omega \)</li>
+                <li>\( Z'_3 = \frac{1}{j(20)(0.005)} = -j10 \Omega \)</li>
+                <li>\( Z'_4 = 10 + j(20)(1) = 10 + j20 \Omega \)</li>
+            </ul>
+            <p>Phương trình điện thế nút:</p>
+            $$ \dot{U}_2 \left( \frac{1}{Z'_1} + \frac{1}{Z'_2} + \frac{1}{Z'_3} + \frac{1}{Z'_4} \right) = \frac{\dot{E}_2}{Z'_2} $$
+            <p>Thay số và tính toán:</p>
+            $$ \dot{U}_2 \approx 4.47\angle-108.43^\circ \text{ V} $$
+            <p>Biểu thức tức thời: \( u_2(t) = 4.47\cos(20t - 108.43^\circ) \) V</p>
+        </div>
+
+        <div class="card">
+            <h2>Kết Quả Cuối Cùng</h2>
+            <div class="result-box">
+                $$ u(t) = 5 + 12\cos(10t - 81.87^\circ) + 4.47\cos(20t - 108.43^\circ) \text{ (V)} $$
+            </div>
+            <p><em>Lưu ý: Góc pha được tính theo độ.</em></p>
+        </div>
+    </div>
+</body>
+</html>
